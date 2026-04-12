@@ -993,6 +993,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
      HERO
 ════════════════════════════════════ -->
 <section class="hero" id="top">
+  <div style="position:absolute;inset:0;background-image:url(hero-bg.jpg);background-size:cover;background-position:center;filter:saturate(0.5) brightness(0.25);z-index:0;pointer-events:none;"></div>
   <div class="hero-inner">
     <h1 class="hero-title">
       How to
@@ -1037,6 +1038,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 ════════════════════════════════════ -->
 <div class="act-wrap act-1">
 <div class="chapter ai" data-n="1" id="a1">
+<div style="position:absolute;inset:0;background-image:url(act1-bg.jpg);background-size:cover;background-position:center;filter:saturate(0.4) brightness(0.28);z-index:0;pointer-events:none;"></div>
 <div class="ch-icon"><i class="ph ph-crosshair" style="font-size:64px;color:var(--green);"></i></div>
   <span class="ch-num">Act One</span>
   <h2 class="ch-title">The <em>Claim</em></h2>
@@ -1148,7 +1150,25 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
     <div class="pts" style="margin-bottom:24px;">
       <div class="pt">
         <span class="pt-lbl">Eight jobs, one person</span>
-        <span class="pt-body" style="font-size:18px;line-height:1.8;">When someone decides to make a game, they're not signing up for one job. They're signing up for <strong>eight — simultaneously, from day one</strong>. In film, you have whole departments for each. In indie game development, one person often holds all eight at once.<br><br><strong style="color:var(--cream);">Solo developer:</strong> all eight land on you, all the time, with no handoffs. <strong style="color:var(--cream);">Small team (2–5):</strong> roles overlap heavily — one person usually owns design and code, another art and narrative. <strong style="color:var(--cream);">Mid-size studio:</strong> dedicated roles emerge, but everyone still stretches. The eight jobs don't disappear as you scale — they just distribute differently. Most of the examples in this piece were made by tiny teams or individuals. That's not an asterisk. That's the point.</span>
+        <span class="pt-body" style="font-size:18px;line-height:1.8;">When someone decides to make a game, they're not signing up for one job. They're signing up for <strong>eight — simultaneously, from day one</strong>. In film, you have whole departments for each. In indie game development, the same person often holds all eight at once. How they distribute depends on the team size.</span>
+        <!-- Solo / Team / Studio scale row -->
+        <span style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-top:18px;">
+          <span style="display:block;padding:16px 18px;background:rgba(40,226,145,.07);border:1px solid rgba(40,226,145,.18);border-radius:10px;">
+            <span style="display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--green);margin-bottom:6px;">Solo Dev</span>
+            <span style="display:block;font-size:13px;color:var(--cream);font-weight:600;margin-bottom:4px;">All 8 + Content</span>
+            <span style="display:block;font-size:12px;color:var(--dim);line-height:1.5;">Every role, every day. No handoffs. The examples in this piece were mostly one person.</span>
+          </span>
+          <span style="display:block;padding:16px 18px;background:rgba(168,126,255,.07);border:1px solid rgba(168,126,255,.18);border-radius:10px;">
+            <span style="display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--purple);margin-bottom:6px;">Small Team (2–5)</span>
+            <span style="display:block;font-size:13px;color:var(--cream);font-weight:600;margin-bottom:4px;">Roles overlap heavily</span>
+            <span style="display:block;font-size:12px;color:var(--dim);line-height:1.5;">One person owns design + code. Another owns art + narrative. Everyone covers gaps.</span>
+          </span>
+          <span style="display:block;padding:16px 18px;background:rgba(255,209,71,.07);border:1px solid rgba(255,209,71,.18);border-radius:10px;">
+            <span style="display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">Mid Studio (6–20)</span>
+            <span style="display:block;font-size:13px;color:var(--cream);font-weight:600;margin-bottom:4px;">Dedicated roles emerge</span>
+            <span style="display:block;font-size:12px;color:var(--dim);line-height:1.5;">Specialisation starts. But everyone still stretches — the jobs don't disappear, they distribute.</span>
+          </span>
+        </span>
       </div>
     </div>
 
@@ -1162,9 +1182,11 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
       <div class="disc-item" style="transition-delay:.35s"><div class="disc-title">MARKETING</div><div class="disc-body">Positioning · Wishlist · Community · Press</div></div>
       <div class="disc-item" style="transition-delay:.42s"><div class="disc-title">AUDIO</div><div class="disc-body">Music · SFX · Adaptive audio · Mix</div></div>
       <div class="disc-item" style="transition-delay:.49s"><div class="disc-title">BUSINESS</div><div class="disc-body">Publishing · Legal · Revenue · Sustainability</div></div>
-    </div>
-    <div class="callout ai" style="margin-bottom:24px;border-left-color:var(--gold);">
-      <strong style="color:var(--gold);">The hidden ninth job — especially for solo developers:</strong> <strong>Content.</strong> How many levels, items, encounters, dialogue trees, recipes, enemy types does your game need to feel complete? Studios have teams dedicated to this. Solo developers make every piece of it by hand. Underestimating the content workload is one of the leading causes of scope collapse — not because the design was bad, but because the sheer volume of content required was never quantified before production began. Ask yourself early: "What's the minimum viable amount of content for this to feel whole?"
+      <!-- 9th job — full width tile -->
+      <div class="disc-item" style="transition-delay:.56s;grid-column:1/-1;border-top:1px solid rgba(255,209,71,.3);background:rgba(255,209,71,.04);">
+        <div class="disc-title" style="color:var(--gold);">CONTENT <span style="font-size:9px;font-weight:600;letter-spacing:.1em;opacity:.7;vertical-align:middle;">— THE NINTH JOB</span></div>
+        <div class="disc-body">Levels · Items · Dialogue · Encounters · Buildings · Recipes · Every piece made by hand</div>
+      </div>
     </div>
     <!-- Budget scale bars -->
     <div class="budget-scale ai" id="budget-scale">
@@ -1304,6 +1326,12 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
       </div>
     </div>
 
+    <!-- Inline screenshot: difficulty contrast -->
+    <figure style="margin:28px 0 32px;border-radius:12px;overflow:hidden;position:relative;">
+      <img src="act4-difficulty.jpg" alt="Dark Souls vs Celeste — two approaches to difficulty" style="width:100%;display:block;height:280px;object-fit:cover;">
+      <figcaption style="font-size:11px;color:var(--dim);padding:10px 18px;background:rgba(15,16,22,.85);backdrop-filter:blur(8px);">Two honest difficulty contracts: <em>Dark Souls</em> makes the wall visible from minute one. <em>Celeste</em> builds an escape hatch that never breaks the achievement. Both work because neither lied.</figcaption>
+    </figure>
+
     <!-- Word-by-word Koster quote reveal -->
     <div style="background:rgba(26,28,36,.9);border-left:3px solid var(--green);border-radius:0 16px 16px 0;padding:32px 36px;margin-bottom:20px;backdrop-filter:blur(12px);">
       <p class="word-reveal" id="koster-quote" style="font-size:20px;font-weight:600;line-height:1.6;margin-bottom:14px;letter-spacing:-.01em;"></p>
@@ -1329,6 +1357,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
 <div class="act-wrap act-5">
 <div class="chapter ai" data-n="5" id="a5-ch">
+<div style="position:absolute;inset:0;background-image:url(act5-bg.jpg);background-size:cover;background-position:center;filter:saturate(0.4) brightness(0.28);z-index:0;pointer-events:none;"></div>
 <div class="ch-icon"><i class="ph ph-user-focus" style="font-size:64px;color:var(--green);"></i></div>
   <span class="ch-num">Act Five</span>
   <h2 class="ch-title">Designing for a <em>Stranger</em></h2>
@@ -1441,6 +1470,12 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
         <span class="pt-lbl">The Core Loop</span>
         <span class="pt-body">What does the player DO every 30 seconds? Not the story, not the world. The literal action. In <a href="https://store.steampowered.com/app/2379780/Balatro/" target="_blank">Balatro</a>, you play cards. In <a href="https://en.wikipedia.org/wiki/Minecraft" target="_blank">Minecraft</a>, you mine and build. In <a href="https://en.wikipedia.org/wiki/Dark_Souls" target="_blank">Dark Souls</a>, you read, attack, dodge, survive. <strong>One sentence. If you can't say it, you're not ready to build.</strong><span class="pt-tip">Ask: why does that action feel good? The answer is what you build first.</span></span>
       </div>
+      <!-- Inline screenshot: core loop examples -->
+      <figure style="margin:4px 0 20px;border-radius:12px;overflow:hidden;">
+        <img src="act6-coreloop.jpg" alt="Core loop gameplay screenshot" style="width:100%;display:block;height:260px;object-fit:cover;">
+        <figcaption style="font-size:11px;color:var(--dim);padding:10px 18px;background:rgba(15,16,22,.85);backdrop-filter:blur(8px);">The 30-second loop made visible — every great game can be described in one sentence of action.</figcaption>
+      </figure>
+
       <div class="pt al" style="transition-delay:.1s">
         <span class="pt-lbl">Design Pillars</span>
         <span class="pt-body">3–5 statements every decision gets measured against. "Is this fun?" is not a pillar. <strong>"The player should always feel like they caused the outcome, good or bad"</strong> — that's a pillar. It's a filter for every decision down the line. See <a href="https://gdcvault.com/play/1035120/The-Four-One-Page-Design" target="_blank">"The Four One-Page Design Docs You Need" — GDC ↗</a>.</span>
@@ -1515,7 +1550,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
       <!-- Word of Mouth -->
       <div style="background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;border-radius:12px;">
-        <span class="disc-ghost-num" data-target="86" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--purple);opacity:.12;position:absolute;top:50%;right:20px;transform:translateY(-50%);line-height:1;pointer-events:none;letter-spacing:-.03em;">86%</span>
+        <span class="disc-ghost-num" data-target="86" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--purple);opacity:.12;position:absolute;top:14px;right:18px;line-height:1;pointer-events:none;letter-spacing:-.03em;">86%</span>
         <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--purple);margin-bottom:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Word of Mouth &nbsp;·&nbsp; <a href="https://investgame.net/wp-content/uploads/2025/03/0794a269-d5c4-4994-9bcf-8c5730d0815e_2025_GDC_State_of_the_Game_Industry_report-1.pdf" target="_blank" style="color:var(--purple);text-decoration:none;">86% of devs use it ↗</a></div>
         <div style="font-size:clamp(1.1rem,2vw,1.35rem);font-weight:800;color:var(--fg);margin-bottom:12px;line-height:1.25;">Content before launch.</div>
         <div style="font-size:clamp(0.85rem,1.3vw,0.95rem);color:var(--mid);line-height:1.65;"><a href="https://www.tiktok.com" target="_blank" style="color:var(--green);text-decoration:underline;">TikTok</a> and <a href="https://www.youtube.com/shorts" target="_blank" style="color:var(--green);text-decoration:underline;">YouTube Shorts</a> are where breakouts happen. A 30-second clip of something unexpected reaches more people than three months of press releases. <em><a href="https://store.steampowered.com/app/3241660/REPO/" target="_blank" style="color:var(--green);text-decoration:underline;">R.E.P.O.</a></em>, <em><a href="https://store.steampowered.com/app/1966720/Lethal_Company/" target="_blank" style="color:var(--green);text-decoration:underline;">Lethal Company</a></em>, <em><a href="https://store.steampowered.com/app/2379780/Balatro/" target="_blank" style="color:var(--green);text-decoration:underline;">Balatro</a></em> — all content before they were launches. You're not marketing a game. You're making content that happens to be about one.</div>
@@ -1523,7 +1558,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
       <!-- Streamers -->
       <div style="background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;border-radius:12px;">
-        <span class="disc-ghost-num" data-target="26" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--gold);opacity:.12;position:absolute;top:50%;right:20px;transform:translateY(-50%);line-height:1;pointer-events:none;letter-spacing:-.03em;">26%</span>
+        <span class="disc-ghost-num" data-target="26" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--gold);opacity:.12;position:absolute;top:14px;right:18px;line-height:1;pointer-events:none;letter-spacing:-.03em;">26%</span>
         <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Live Streamers &nbsp;·&nbsp; <a href="https://investgame.net/wp-content/uploads/2025/03/0794a269-d5c4-4994-9bcf-8c5730d0815e_2025_GDC_State_of_the_Game_Industry_report-1.pdf" target="_blank" style="color:var(--gold);text-decoration:none;">26% most-used channel ↗</a></div>
         <div style="font-size:clamp(1.1rem,2vw,1.35rem);font-weight:800;color:var(--fg);margin-bottom:12px;line-height:1.25;">Fit over follower count.</div>
         <div style="font-size:clamp(0.85rem,1.3vw,0.95rem);color:var(--mid);line-height:1.65;">A streamer with 500 dedicated viewers in your genre is worth more than 50,000 who aren't interested. Give keys 3–4 weeks early, no pressure. The best coverage comes from streamers who <em>discovered</em> you — not who were briefed. Target by library, not audience size.</div>
@@ -1531,7 +1566,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
       <!-- Community -->
       <div style="background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;border-radius:12px;">
-        <span class="disc-ghost-num" data-target="74" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--green);opacity:.12;position:absolute;top:50%;right:20px;transform:translateY(-50%);line-height:1;pointer-events:none;letter-spacing:-.03em;">74%</span>
+        <span class="disc-ghost-num" data-target="74" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--green);opacity:.12;position:absolute;top:14px;right:18px;line-height:1;pointer-events:none;letter-spacing:-.03em;">74%</span>
         <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Real-Time Community &nbsp;·&nbsp; <span style="color:var(--green);opacity:.8;">74% use <a href="https://discord.com" target="_blank" style="color:var(--green);text-decoration:none;">Discord</a> / Slack</span></div>
         <div style="font-size:clamp(1.1rem,2vw,1.35rem);font-weight:800;color:var(--fg);margin-bottom:12px;line-height:1.25;">Your early players are already advocates.</div>
         <div style="font-size:clamp(0.85rem,1.3vw,0.95rem);color:var(--mid);line-height:1.65;">A <a href="https://discord.com" target="_blank" style="color:var(--green);text-decoration:underline;">Discord</a> with 200 people who love your game before launch is worth more than any press hit. They post clips, bring friends, defend it in comment sections. Build the community during production — not after launch. The third-most used developer marketing channel in 2025 for exactly this reason.</div>
@@ -1560,6 +1595,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
 <div class="act-wrap act-8">
 <div class="chapter ai" data-n="8" id="a8-ch">
+<div style="position:absolute;inset:0;background-image:url(act8-bg.jpg);background-size:cover;background-position:center;filter:saturate(0.4) brightness(0.28);z-index:0;pointer-events:none;"></div>
 <div class="ch-icon"><i class="ph ph-skull" style="font-size:64px;color:var(--coral);"></i></div>
   <span class="ch-num">Act Eight</span>
   <h2 class="ch-title">The Part Nobody Puts<br>in the <em>Trailer</em></h2>
@@ -1617,6 +1653,12 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
       </div>
       <div class="pt">
         <span class="pt-lbl c">Scope as Self-Care</span>
+      <!-- Inline screenshot: Stardew Valley — the long road -->
+      <figure style="margin:4px 0 20px;border-radius:12px;overflow:hidden;">
+        <img src="act8-stardew.jpg" alt="Stardew Valley gameplay" style="width:100%;display:block;height:260px;object-fit:cover;">
+        <figcaption style="font-size:11px;color:var(--dim);padding:10px 18px;background:rgba(15,16,22,.85);backdrop-filter:blur(8px);"><em>Stardew Valley</em> — four years, one person, a minimum wage day job. The trough didn't stop it. It just delayed it.</figcaption>
+      </figure>
+
         <span class="pt-body">Setting a realistic scope is not a creative compromise. It is the only mechanism by which a game gets finished. <strong>An unfinished game helps no one</strong> — not you, not your potential players, not the people who were excited about it. <a href="https://store.steampowered.com/app/413150/Stardew_Valley/" target="_blank" style="color:var(--green);text-decoration:underline;">Stardew Valley</a> began as an attempt to recreate <a href="https://en.wikipedia.org/wiki/Harvest_Moon_(video_game)" target="_blank" style="color:var(--green);text-decoration:underline;">Harvest Moon</a> with every feature the developer wanted. It shipped because he kept cutting until it was finishable by one person. That discipline is what you're building.</span>
       </div>
       <div class="pt">
@@ -1743,6 +1785,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
 <div class="act-wrap act-9">
 <div class="chapter ai" data-n="9" id="a9-ch">
+<div style="position:absolute;inset:0;background-image:url(act9-bg.jpg);background-size:cover;background-position:center;filter:saturate(0.4) brightness(0.28);z-index:0;pointer-events:none;"></div>
 <div class="ch-icon"><i class="ph ph-chart-bar" style="font-size:64px;color:var(--gold);"></i></div>
   <span class="ch-num">Act Nine</span>
   <h2 class="ch-title">The <em>Numbers</em></h2>
@@ -1793,6 +1836,13 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
   </div>
 
 </div><!-- /stat-stack -->
+
+  <!-- Inline visual: market concentration chart / Steam releases -->
+  <figure style="margin:0 0 0;overflow:hidden;">
+    <img src="act9-market.jpg" alt="Steam release volume vs revenue distribution" style="width:100%;display:block;height:320px;object-fit:cover;object-position:center top;">
+    <figcaption style="font-size:11px;color:var(--dim);padding:10px 18px;background:rgba(15,16,22,.85);backdrop-filter:blur(8px);">More releases every year, same player attention to go around — the defining challenge of the current market.</figcaption>
+  </figure>
+
   <div class="s-inner" style="padding:0 40px 64px;">
     <div class="pts" style="margin-bottom:24px;">
       <div class="pt">
@@ -1833,6 +1883,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
 <div class="act-wrap act-10">
 <div class="chapter ai" data-n="10" id="a10-ch">
+<div style="position:absolute;inset:0;background-image:url(act10-bg.jpg);background-size:cover;background-position:center;filter:saturate(0.4) brightness(0.28);z-index:0;pointer-events:none;"></div>
 <div class="ch-icon"><i class="ph ph-shooting-star" style="font-size:64px;color:var(--purple);"></i></div>
   <span class="ch-num">Act Ten</span>
   <h2 class="ch-title">So Why Does<br>Anyone <em>Do It?</em></h2>
