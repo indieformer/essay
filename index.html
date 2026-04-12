@@ -459,6 +459,10 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
   #disc-expanded [style*="white-space:nowrap"]{white-space:normal !important;overflow:visible !important;text-overflow:unset !important;}
   /* Team scale cards — stack vertically */
   .team-scale-grid{grid-template-columns:1fr !important;}
+  /* Indie vs AAA table — show scroll hint, enable scroll */
+  .indie-scroll-hint{display:flex !important;}
+  .indie-aaa-scroll-wrap{border-radius:12px;}
+  .indie-aaa-scroll-wrap::-webkit-scrollbar{display:none;}
   /* Scorchpot callout — stack on mobile, full-width image */
   .scorchpot-card{grid-template-columns:1fr !important;padding:0 !important;overflow:hidden;}
   .scorchpot-card > a{display:block;}
@@ -1188,8 +1192,8 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
       <div class="disc-item" style="transition-delay:.49s"><div class="disc-title">BUSINESS</div><div class="disc-body">Publishing · Legal · Revenue · Sustainability</div></div>
       <!-- 9th job — full width tile -->
       <div class="disc-item" style="transition-delay:.56s;grid-column:1/-1;border-top:1px solid rgba(255,209,71,.3);background:rgba(255,209,71,.04);">
-        <div class="disc-title" style="color:var(--gold);">CONTENT <span style="font-size:9px;font-weight:600;letter-spacing:.1em;opacity:.7;vertical-align:middle;">— THE NINTH JOB</span></div>
-        <div class="disc-body">Levels · Items · Dialogue · Encounters · Buildings · Recipes · Every piece made by hand</div>
+        <div class="disc-title" style="color:var(--gold);">EVERYTHING ELSE <span style="font-size:9px;font-weight:600;letter-spacing:.1em;opacity:.7;vertical-align:middle;">— THE HIDDEN LAYER</span></div>
+        <div class="disc-body">Tutorial · Tooltips · Settings · Credits · Onboarding · QoL polish · Levels · Items · Dialogue · The hundred small things no one scheduled but the player expects to just work</div>
       </div>
     </div>
     <!-- Budget scale bars -->
@@ -1397,7 +1401,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
         </div>
         <div class="pt">
           <span class="pt-lbl">Failure Design</span>
-          <span class="pt-body">Failure must feel <strong>fair</strong> (player understands why), <strong>recoverable</strong> (they believe they can do better), and <strong>instructive</strong> (each failure gives information). A death that feels random permanently loses a player.</span>
+          <span class="pt-body">Failure must feel <strong>fair</strong> (player understands why), <strong>recoverable</strong> (they believe they can do better), and <strong>instructive</strong> (each failure gives information). <a href="https://store.steampowered.com/app/1145350/Hades_II/" target="_blank" style="color:var(--green);">Hades II</a> takes this further — death advances the narrative, so every run ends in progress rather than punishment. A death that feels random permanently loses a player.</span>
         </div>
       </div>
       <div class="split-img" style="display:flex;flex-direction:column;align-items:stretch;">
@@ -1683,97 +1687,104 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
     <p style="font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;">Why players are choosing indie</p>
     <p style="font-size:clamp(1rem,1.6vw,1.2rem);color:var(--mid);max-width:580px;margin-bottom:36px;line-height:1.6;">The structural shift has a player-side explanation. What gamers are moving <em>away from</em> and what they're moving <em>toward</em> are not the same thing.</p>
 
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3px;border-radius:14px;overflow:hidden;">
+    <!-- Scroll hint — mobile only -->
+    <div class="indie-scroll-hint" style="display:none;align-items:center;gap:8px;margin-bottom:12px;font-size:11px;color:var(--dim);font-weight:600;letter-spacing:.06em;">
+      <span style="opacity:.5;">←</span> swipe to compare <span style="opacity:.5;">→</span>
+    </div>
+
+    <div class="indie-aaa-scroll-wrap" style="overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:14px;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;min-width:560px;border:1px solid var(--rule);border-radius:14px;overflow:hidden;">
 
       <!-- HEADERS -->
-      <div style="background:rgba(220,80,60,.12);padding:18px 24px;border-bottom:1px solid rgba(220,80,60,.2);">
+      <div style="background:rgba(220,80,60,.1);padding:20px 28px;border-bottom:1px solid var(--rule);">
         <span style="font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);">What players leave AAA for</span>
       </div>
-      <div style="background:rgba(40,226,145,.1);padding:18px 24px;border-bottom:1px solid rgba(40,226,145,.18);">
+      <div style="background:rgba(40,226,145,.08);padding:20px 28px;border-bottom:1px solid var(--rule);border-left:1px solid var(--rule);">
         <span style="font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--green);">What indie delivers instead</span>
       </div>
 
       <!-- ROW 1 -->
-      <div style="background:rgba(220,80,60,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;">
-        <span style="font-size:22px;flex-shrink:0;">🪟</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">🪟</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Polished graphics over everything</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">Better visuals with each release. Story and soul optional.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Polished graphics over everything</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">Better visuals with each release. Story and soul optional.</p>
         </div>
       </div>
-      <div style="background:rgba(40,226,145,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;">
-        <span style="font-size:22px;flex-shrink:0;">🎨</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--rule);border-left:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">🎨</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Unique artistic identity</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">A visual language you haven't seen before. Style as intention.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Unique artistic identity</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">A visual language you haven't seen before. Style as intention.</p>
         </div>
       </div>
 
       <!-- ROW 2 -->
-      <div style="background:rgba(220,80,60,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.04);">
-        <span style="font-size:22px;flex-shrink:0;">🔁</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">🔁</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Safe franchise formulas</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">Sequel #7. Same loop. Known to be marketable.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Safe franchise formulas</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">Sequel #7. Same loop. Known to be marketable.</p>
         </div>
       </div>
-      <div style="background:rgba(40,226,145,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.04);">
-        <span style="font-size:22px;flex-shrink:0;">⚡</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--rule);border-left:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">⚡</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Creative risk-taking</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">Unconventional mechanics. Storylines no committee approved.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Creative risk-taking</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">Unconventional mechanics. Storylines no committee approved.</p>
         </div>
       </div>
 
       <!-- ROW 3 -->
-      <div style="background:rgba(220,80,60,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.04);">
-        <span style="font-size:22px;flex-shrink:0;">💳</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">💳</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Battlepasses & paid DLC</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">$70 base. $30 season pass. $15 weapon skin. Repeat.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Battlepasses &amp; paid DLC</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">$70 base. $30 season pass. $15 weapon skin. Repeat.</p>
         </div>
       </div>
-      <div style="background:rgba(40,226,145,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.04);">
-        <span style="font-size:22px;flex-shrink:0;">🎟️</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--rule);border-left:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">🎟️</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Accessible, complete games</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">$15–25. Everything included. Built to be played, not monetised.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Accessible, complete games</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">$15–25. Everything included. Built to be played, not monetised.</p>
         </div>
       </div>
 
       <!-- ROW 4 -->
-      <div style="background:rgba(220,80,60,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.04);">
-        <span style="font-size:22px;flex-shrink:0;">🏭</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">🏭</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Corporate production lines</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">500 people building toward a release date, not a vision.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Corporate production lines</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">500 people building toward a release date, not a vision.</p>
         </div>
       </div>
-      <div style="background:rgba(40,226,145,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.04);">
-        <span style="font-size:22px;flex-shrink:0;">❤️</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-bottom:1px solid var(--rule);border-left:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">❤️</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Developer passion — felt in the product</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">"You can feel that passion in the end product." — player, The Science Survey 2025</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Developer passion — felt in the product</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">"You can feel that passion in the end product." — player, The Science Survey 2025</p>
         </div>
       </div>
 
       <!-- ROW 5 -->
-      <div style="background:rgba(220,80,60,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.04);">
-        <span style="font-size:22px;flex-shrink:0;">📣</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">📣</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">One-way broadcast marketing</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">Announce. Hype. Ship. No relationship with the player.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">One-way broadcast marketing</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">Announce. Hype. Ship. No relationship with the player.</p>
         </div>
       </div>
-      <div style="background:rgba(40,226,145,.06);padding:20px 24px;display:flex;align-items:center;gap:14px;border-top:1px solid rgba(255,255,255,.04);">
-        <span style="font-size:22px;flex-shrink:0;">🤝</span>
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;border-left:1px solid var(--rule);">
+        <span style="font-size:24px;flex-shrink:0;margin-top:2px;">🤝</span>
         <div>
-          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:3px;">Developer–community relationship</p>
-          <p style="font-size:12px;color:var(--dim);line-height:1.5;">Alpha/beta feedback loops. Players invested in the journey, not just the product.</p>
+          <p style="font-size:13px;font-weight:700;color:var(--cream);margin-bottom:5px;">Developer–community relationship</p>
+          <p style="font-size:12px;color:var(--dim);line-height:1.6;">Alpha/beta feedback loops. Players invested in the journey, not just the product.</p>
         </div>
       </div>
 
     </div><!-- /grid -->
+    </div><!-- /scroll-wrap -->
     <cite style="display:block;margin-top:14px;font-size:11px;color:var(--dim);font-style:italic;">
       <a href="https://thesciencesurvey.com/arts-entertainment/2025/03/09/the-rise-of-indie-games-how-passion-and-creativity-are-revolutionizing-the-industry/" target="_blank" style="color:var(--dim);text-decoration:underline;">The Science Survey — The Rise of Indie Games, March 2025 ↗</a>
     </cite>
@@ -2091,6 +2102,17 @@ const io = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.ai, .al, .ar, .as, .stat-cell, .reveal-block').forEach(el => io.observe(el));
 
+
+/* ── INDIE vs AAA scroll hint — fade on first interaction ── */
+const indieWrap = document.querySelector('.indie-aaa-scroll-wrap');
+const indieHint = document.querySelector('.indie-scroll-hint');
+if (indieWrap && indieHint) {
+  indieWrap.addEventListener('scroll', function() {
+    indieHint.style.transition = 'opacity .4s';
+    indieHint.style.opacity = '0';
+    setTimeout(() => indieHint.style.display = 'none', 400);
+  }, { once: true, passive: true });
+}
 
 /* ── PLAYER CONTRACT — scroll-driven reveal ── */
 (function() {
