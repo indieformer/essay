@@ -4,12 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to Really Make a Game — Indieformer</title>
+
+<!-- Primary SEO -->
+<meta name="description" content="The honest guide to indie game development. 10 acts covering everything from game design and scope to the real industry numbers — built for developers who want to understand what they're actually getting into.">
+<meta name="keywords" content="indie game development, how to make an indie game, indie game guide, steam game development, indie developer, game design, indie game industry, indieformer">
+<meta name="author" content="Indieformer">
+<link rel="canonical" href="https://www.indieformer.com/how-to-really-make-a-game">
+
+<!-- Open Graph (Facebook, Discord, LinkedIn previews) -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Really Make a Game — Indieformer">
+<meta property="og:description" content="The honest guide to indie game development. 10 acts covering game design, production, the human reality of the industry, and the real numbers — so nothing surprises you once you're inside it.">
+<meta property="og:url" content="https://www.indieformer.com/how-to-really-make-a-game">
+<meta property="og:image" content="https://www.indieformer.com/how-to-really-make-a-game-og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Indieformer">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to Really Make a Game — Indieformer">
+<meta name="twitter:description" content="The honest guide to indie game development. 10 acts. Real numbers. No sugarcoating.">
+<meta name="twitter:image" content="https://www.indieformer.com/how-to-really-make-a-game-og.jpg">
+<meta name="twitter:site" content="@indieformer">
 <script src="https://unpkg.com/@phosphor-icons/web"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;scroll-padding-top:72px;}
+html{scroll-behavior:smooth;scroll-padding-top:72px;overflow-x:hidden;max-width:100%;}
 
 :root{
   --bg:#262730; --bg2:#2F3040; --bg3:#1A1C24;
@@ -427,6 +451,12 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
   .stat-n{font-size:48px;}
   .hero-icon{display:none;}
   .hero-title{font-size:clamp(40px,12vw,72px);}
+  /* Player contract — stack poster below text, hide on very small */
+  .pc-inner{grid-template-columns:1fr !important;padding:60px 20px;}
+  .pc-poster-wrap{display:none;}
+  /* Disc cards — stack to single column, allow eyebrow to wrap */
+  #disc-expanded{grid-template-columns:1fr !important;}
+  #disc-expanded [style*="white-space:nowrap"]{white-space:normal !important;overflow:visible !important;text-overflow:unset !important;}
 }
 
 /* Reduced motion: keep visible, no transitions */
@@ -970,7 +1000,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
     <div class="hero-meta">
       <div class="hero-byline">
         <strong>Josh</strong>
-        Founder, Indieformer · ~12 min read
+        Founder, Indieformer · ~30 min read
       </div>
       <a href="#a1" class="hero-scroll">Begin ↓</a>
     </div>
@@ -983,16 +1013,14 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
     <div class="m-cols">
       <div>
         <p class="m-intro">Games are the hardest creative thing a human being can attempt. This is the argument — built across ten acts, sourced, and written for anyone who makes games, loves games, or is thinking about making one.</p>
-        <p class="m-intro" style="margin-top:14px;"><strong>Ten acts. Full-source. Scroll all the way through.</strong></p>
         <p class="m-intro" style="margin-top:16px;padding:14px 18px;background:rgba(40,226,145,.06);border:1px solid rgba(40,226,145,.18);border-radius:10px;color:var(--mid);font-size:15px;">
           <strong style="color:var(--cream);">A note before you start:</strong> This isn't a guide to coding a game. It's about creating a game as an idea — as a creative work, a product, and a design challenge. The concepts here apply whether you're a solo developer, a team lead, a producer, or someone who's never opened an engine. The principles don't change.
         </p>
       </div>
       <div class="m-facts">
         <div class="f-row"><span class="f-key">By</span><span class="f-val">Josh, Indieformer</span></div>
-        <div class="f-row"><span class="f-key">Market</span><span class="f-val"><a href="https://www.statista.com/statistics/246888/value-of-the-global-video-game-market/" target="_blank">$189B, 2025 ↗</a></span></div>
-        <div class="f-row"><span class="f-key">Steam 2025</span><span class="f-val"><a href="https://gamedevreports.substack.com/p/sensor-tower-state-of-gaming-2026" target="_blank">20,000+ releases ↗</a></span></div>
         <div class="f-row"><span class="f-key">Acts</span><span class="f-val">10</span></div>
+        <div class="f-row"><span class="f-key">Read</span><span class="f-val">~30 min</span></div>
         <div class="f-row"><span class="f-key">Also see</span><span class="f-val"><a href="https://www.indieformer.com/steam-marketing-guide" target="_blank">Steam Guide →</a></span></div>
       </div>
     </div>
@@ -1117,7 +1145,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
     <div class="pts" style="margin-bottom:24px;">
       <div class="pt">
         <span class="pt-lbl">Eight jobs, one person</span>
-        <span class="pt-body" style="font-size:18px;line-height:1.8;">When someone decides to make a game, they're not signing up for one job. They're signing up for <strong>eight — simultaneously, from day one</strong>. In film, you have whole departments for each. In indie game development, one person often holds all eight at once.</span>
+        <span class="pt-body" style="font-size:18px;line-height:1.8;">When someone decides to make a game, they're not signing up for one job. They're signing up for <strong>eight — simultaneously, from day one</strong>. In film, you have whole departments for each. In indie game development, one person often holds all eight at once.<br><br><strong style="color:var(--cream);">Solo developer:</strong> all eight land on you, all the time, with no handoffs. <strong style="color:var(--cream);">Small team (2–5):</strong> roles overlap heavily — one person usually owns design and code, another art and narrative. <strong style="color:var(--cream);">Mid-size studio:</strong> dedicated roles emerge, but everyone still stretches. The eight jobs don't disappear as you scale — they just distribute differently. Most of the examples in this piece were made by tiny teams or individuals. That's not an asterisk. That's the point.</span>
       </div>
     </div>
 
@@ -1131,6 +1159,9 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
       <div class="disc-item" style="transition-delay:.35s"><div class="disc-title">MARKETING</div><div class="disc-body">Positioning · Wishlist · Community · Press</div></div>
       <div class="disc-item" style="transition-delay:.42s"><div class="disc-title">AUDIO</div><div class="disc-body">Music · SFX · Adaptive audio · Mix</div></div>
       <div class="disc-item" style="transition-delay:.49s"><div class="disc-title">BUSINESS</div><div class="disc-body">Publishing · Legal · Revenue · Sustainability</div></div>
+    </div>
+    <div class="callout ai" style="margin-bottom:24px;border-left-color:var(--gold);">
+      <strong style="color:var(--gold);">The hidden ninth job — especially for solo developers:</strong> <strong>Content.</strong> How many levels, items, encounters, dialogue trees, recipes, enemy types does your game need to feel complete? Studios have teams dedicated to this. Solo developers make every piece of it by hand. Underestimating the content workload is one of the leading causes of scope collapse — not because the design was bad, but because the sheer volume of content required was never quantified before production began. Ask yourself early: "What's the minimum viable amount of content for this to feel whole?"
     </div>
     <!-- Budget scale bars -->
     <div class="budget-scale ai" id="budget-scale">
@@ -1413,7 +1444,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
       </div>
       <div class="pt al" style="transition-delay:.2s">
         <span class="pt-lbl">The Prototype</span>
-        <span class="pt-body">The fastest, ugliest possible version of your core loop. No art. No music. No story. <strong>Does this mechanic actually feel like something?</strong> Most teams skip this. Most teams regret it.<span class="pt-tip">The prototype isn't a demo. It's a question. "Does this feel good?" is all you're asking.</span></span>
+        <span class="pt-body">The fastest, ugliest possible version of your core loop. No art. No music. No story. <strong>Does this mechanic actually feel like something?</strong> Most teams skip this. Most teams regret it. One honest caveat: for deeply content-driven games — farming sims, narrative RPGs, world-builders — a bare-bones prototype may not be enough to judge if the game is fun. Some games only come alive when the content fills them. If that's your game, this is where developer instinct matters more than validation. You have to be able to imagine the finished thing before it exists.<span class="pt-tip">The prototype is a question: "Does this feel good?" — but for content-heavy games, the real question is: "Can I imagine this feeling whole?"</span></span>
       </div>
       <div class="pt al" style="transition-delay:.3s">
         <span class="pt-lbl">Scope</span>
@@ -1481,7 +1512,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
       <!-- Word of Mouth -->
       <div style="background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;border-radius:12px;">
-        <span class="disc-ghost-num" data-target="86" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--purple);opacity:.12;position:absolute;top:12px;right:20px;line-height:1;pointer-events:none;letter-spacing:-.03em;">86%</span>
+        <span class="disc-ghost-num" data-target="86" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--purple);opacity:.12;position:absolute;top:50%;right:20px;transform:translateY(-50%);line-height:1;pointer-events:none;letter-spacing:-.03em;">86%</span>
         <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--purple);margin-bottom:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Word of Mouth &nbsp;·&nbsp; <a href="https://investgame.net/wp-content/uploads/2025/03/0794a269-d5c4-4994-9bcf-8c5730d0815e_2025_GDC_State_of_the_Game_Industry_report-1.pdf" target="_blank" style="color:var(--purple);text-decoration:none;">86% of devs use it ↗</a></div>
         <div style="font-size:clamp(1.1rem,2vw,1.35rem);font-weight:800;color:var(--fg);margin-bottom:12px;line-height:1.25;">Content before launch.</div>
         <div style="font-size:clamp(0.85rem,1.3vw,0.95rem);color:var(--mid);line-height:1.65;"><a href="https://www.tiktok.com" target="_blank" style="color:var(--green);text-decoration:underline;">TikTok</a> and <a href="https://www.youtube.com/shorts" target="_blank" style="color:var(--green);text-decoration:underline;">YouTube Shorts</a> are where breakouts happen. A 30-second clip of something unexpected reaches more people than three months of press releases. <em><a href="https://store.steampowered.com/app/3241660/REPO/" target="_blank" style="color:var(--green);text-decoration:underline;">R.E.P.O.</a></em>, <em><a href="https://store.steampowered.com/app/1966720/Lethal_Company/" target="_blank" style="color:var(--green);text-decoration:underline;">Lethal Company</a></em>, <em><a href="https://store.steampowered.com/app/2379780/Balatro/" target="_blank" style="color:var(--green);text-decoration:underline;">Balatro</a></em> — all content before they were launches. You're not marketing a game. You're making content that happens to be about one.</div>
@@ -1489,7 +1520,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
       <!-- Streamers -->
       <div style="background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;border-radius:12px;">
-        <span class="disc-ghost-num" data-target="26" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--gold);opacity:.12;position:absolute;top:12px;right:20px;line-height:1;pointer-events:none;letter-spacing:-.03em;">26%</span>
+        <span class="disc-ghost-num" data-target="26" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--gold);opacity:.12;position:absolute;top:50%;right:20px;transform:translateY(-50%);line-height:1;pointer-events:none;letter-spacing:-.03em;">26%</span>
         <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Live Streamers &nbsp;·&nbsp; <a href="https://investgame.net/wp-content/uploads/2025/03/0794a269-d5c4-4994-9bcf-8c5730d0815e_2025_GDC_State_of_the_Game_Industry_report-1.pdf" target="_blank" style="color:var(--gold);text-decoration:none;">26% most-used channel ↗</a></div>
         <div style="font-size:clamp(1.1rem,2vw,1.35rem);font-weight:800;color:var(--fg);margin-bottom:12px;line-height:1.25;">Fit over follower count.</div>
         <div style="font-size:clamp(0.85rem,1.3vw,0.95rem);color:var(--mid);line-height:1.65;">A streamer with 500 dedicated viewers in your genre is worth more than 50,000 who aren't interested. Give keys 3–4 weeks early, no pressure. The best coverage comes from streamers who <em>discovered</em> you — not who were briefed. Target by library, not audience size.</div>
@@ -1497,7 +1528,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
       <!-- Community -->
       <div style="background:var(--bg2);padding:36px 32px;position:relative;overflow:hidden;border-radius:12px;">
-        <span class="disc-ghost-num" data-target="74" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--green);opacity:.12;position:absolute;top:12px;right:20px;line-height:1;pointer-events:none;letter-spacing:-.03em;">74%</span>
+        <span class="disc-ghost-num" data-target="74" data-suffix="%" style="font-size:5rem;font-weight:900;color:var(--green);opacity:.12;position:absolute;top:50%;right:20px;transform:translateY(-50%);line-height:1;pointer-events:none;letter-spacing:-.03em;">74%</span>
         <div style="font-size:0.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green);margin-bottom:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Real-Time Community &nbsp;·&nbsp; <span style="color:var(--green);opacity:.8;">74% use <a href="https://discord.com" target="_blank" style="color:var(--green);text-decoration:none;">Discord</a> / Slack</span></div>
         <div style="font-size:clamp(1.1rem,2vw,1.35rem);font-weight:800;color:var(--fg);margin-bottom:12px;line-height:1.25;">Your early players are already advocates.</div>
         <div style="font-size:clamp(0.85rem,1.3vw,0.95rem);color:var(--mid);line-height:1.65;">A <a href="https://discord.com" target="_blank" style="color:var(--green);text-decoration:underline;">Discord</a> with 200 people who love your game before launch is worth more than any press hit. They post clips, bring friends, defend it in comment sections. Build the community during production — not after launch. The third-most used developer marketing channel in 2025 for exactly this reason.</div>
@@ -1753,7 +1784,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
     <div class="sm-inner">
       <span class="sm-num g" data-target="77" data-suffix="%">0%</span>
       <p class="sm-label">indie revenue growth on Steam in a single year — then the floor dropped</p>
-      <p class="sm-context">In 2023, indie revenue on Steam grew 77% year-over-year — the biggest single-year surge the category had ever seen. Then <a href="https://store.steampowered.com/app/2358720/Black_Myth_Wukong/" target="_blank" style="color:var(--green);text-decoration:underline;">Black Myth: Wukong</a> arrived in 2024 and, classified as indie, inflated the whole category. Then Steam hit $11.7 billion in 2025 — a record year — and indie revenue actually declined. AA and AAA grew. Boom. Concentration. Fragmentation. All within 36 months. The market didn't break. It restructured. And how it restructured is the entire story of what to do next.</p>
+      <p class="sm-context">In 2023, indie revenue on Steam grew 77% year-over-year — the biggest single-year surge the category had ever seen. Then <a href="https://store.steampowered.com/app/2358720/Black_Myth_Wukong/" target="_blank" style="color:var(--green);text-decoration:underline;">Black Myth: Wukong</a> arrived in 2024 and, classified as indie, inflated the whole category. Then Steam hit $11.7 billion in 2025 — a record year — and indie revenue actually declined. AA and AAA grew. Boom. Concentration. Fragmentation. All within 36 months. Revenue shifted, concentration accelerated, and a record Steam year still left most indie developers worse off. How that happened is the entire story of what to do next.</p>
       <cite class="sm-src"><a href="https://gamedevreports.substack.com/p/sensor-tower-state-of-gaming-2026" target="_blank">Sensor Tower — State of Gaming 2026, p.34 ↗</a></cite>
     </div>
   </div>
@@ -1763,7 +1794,7 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
     <div class="pts" style="margin-bottom:24px;">
       <div class="pt">
         <span class="pt-lbl g">What revenue concentration actually means</span>
-        <span class="pt-body">The Triple I stat isn't a ceiling — it's a map. Revenue concentrating at the top tells you where the gravity is, not where you can't go. <a href="https://store.steampowered.com/app/1966720/Lethal_Company/" target="_blank" style="color:var(--green);text-decoration:underline;">Lethal Company</a>'s developer had three prior games earning under $1M combined. <a href="https://www.pocketpair.jp" target="_blank" style="color:var(--green);text-decoration:underline;">Pocketpair</a> shipped four titles before <a href="https://store.steampowered.com/app/1623730/Palworld/" target="_blank" style="color:var(--green);text-decoration:underline;">Palworld</a>. The same VGI data shows second games earn <strong>40% more on average than first games</strong>. The market rewards compounding. See <a href="https://app.sensortower.com/vgi/assets/reports/VGI_Global_Indie_Games_Market_Report_2024.pdf" target="_blank">VGI 2024 full report ↗</a>.</span>
+        <span class="pt-body">Revenue concentrating at the top tells you where the gravity is — not where you can't go. <a href="https://store.steampowered.com/app/1966720/Lethal_Company/" target="_blank" style="color:var(--green);text-decoration:underline;">Lethal Company</a>'s developer had three prior games earning under $1M combined. <a href="https://www.pocketpair.jp" target="_blank" style="color:var(--green);text-decoration:underline;">Pocketpair</a> shipped four titles before <a href="https://store.steampowered.com/app/1623730/Palworld/" target="_blank" style="color:var(--green);text-decoration:underline;">Palworld</a>. The same VGI data shows second games earn <strong>40% more on average than first games</strong>. The market rewards compounding. See <a href="https://app.sensortower.com/vgi/assets/reports/VGI_Global_Indie_Games_Market_Report_2024.pdf" target="_blank">VGI 2024 full report ↗</a>.</span>
       </div>
     </div>
   </div><!-- /s-inner -->
@@ -1886,7 +1917,14 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
 
     </div>
 
-    <div class="closing" style="margin-top:48px;">
+    <!-- Feed the Scorchpot — live example -->
+    <div class="ai" style="margin-top:48px;padding:32px 36px;background:rgba(40,226,145,.05);border:1px solid rgba(40,226,145,.2);border-radius:14px;">
+      <p style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">This piece exists because of one game</p>
+      <p style="font-size:clamp(1rem,1.8vw,1.2rem);font-weight:700;color:var(--cream);margin-bottom:10px;line-height:1.3;"><a href="https://store.steampowered.com/app/3966510/Feed_the_Scorchpot/" target="_blank" style="color:var(--cream);text-decoration:none;">Feed the Scorchpot ↗</a></p>
+      <p style="font-size:clamp(0.85rem,1.3vw,1rem);color:var(--mid);line-height:1.7;">A solo-developed game that Indieformer is publishing — and the direct reason this guide was written. Every concept here — the eight disciplines, the content workload, the trough, the community, the odds — was drawn from watching a single developer navigate all of it in real time. If you want to follow a live example of everything in this piece, <a href="https://www.indieformer.com/scorchpot" target="_blank" style="color:var(--green);text-decoration:underline;">we're tracking the journey here ↗</a>.</p>
+    </div>
+
+    <div class="closing" style="margin-top:36px;">
       <p>Start with the core loop. One sentence. Everything else follows from that.</p>
       <p style="margin-top:12px;">And if you want to understand what's worth playing before it gets discovered by everyone else — that's what <a href="https://indieformer.com" target="_blank" style="color:var(--green);font-weight:700;"><strong>Indieformer</strong></a> is for.</p>
     </div>
