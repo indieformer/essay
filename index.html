@@ -33,7 +33,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap');
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;scroll-padding-top:72px;overflow-x:hidden;max-width:100%;}
+html{scroll-behavior:smooth;scroll-padding-top:72px;}
 
 :root{
   --bg:#262730; --bg2:#2F3040; --bg3:#1A1C24;
@@ -457,6 +457,9 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
   /* Disc cards — stack to single column, allow eyebrow to wrap */
   #disc-expanded{grid-template-columns:1fr !important;}
   #disc-expanded [style*="white-space:nowrap"]{white-space:normal !important;overflow:visible !important;text-overflow:unset !important;}
+  /* Scorchpot callout — stack on mobile */
+  .scorchpot-card{grid-template-columns:1fr !important;}
+  .scorchpot-card img{width:80px !important;}
 }
 
 /* Reduced motion: keep visible, no transitions */
@@ -1918,10 +1921,15 @@ hr.div{border:none;border-top:1px solid var(--rule);margin:0;}
     </div>
 
     <!-- Feed the Scorchpot — live example -->
-    <div class="ai" style="margin-top:48px;padding:32px 36px;background:rgba(40,226,145,.05);border:1px solid rgba(40,226,145,.2);border-radius:14px;">
-      <p style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:10px;">This piece exists because of one game</p>
-      <p style="font-size:clamp(1rem,1.8vw,1.2rem);font-weight:700;color:var(--cream);margin-bottom:10px;line-height:1.3;"><a href="https://store.steampowered.com/app/3966510/Feed_the_Scorchpot/" target="_blank" style="color:var(--cream);text-decoration:none;">Feed the Scorchpot ↗</a></p>
-      <p style="font-size:clamp(0.85rem,1.3vw,1rem);color:var(--mid);line-height:1.7;">A solo-developed game that Indieformer is publishing — and the direct reason this guide was written. Every concept here — the eight disciplines, the content workload, the trough, the community, the odds — was drawn from watching a single developer navigate all of it in real time. If you want to follow a live example of everything in this piece, <a href="https://www.indieformer.com/scorchpot" target="_blank" style="color:var(--green);text-decoration:underline;">we're tracking the journey here ↗</a>.</p>
+    <div class="ai scorchpot-card" style="margin-top:48px;padding:32px 36px;background:rgba(40,226,145,.05);border:1px solid rgba(40,226,145,.2);border-radius:14px;display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:center;">
+      <a href="https://store.steampowered.com/app/3966510/Feed_the_Scorchpot/" target="_blank" style="flex-shrink:0;">
+        <img src="scorchpot.png" alt="Feed the Scorchpot" style="width:120px;border-radius:10px;box-shadow:0 8px 32px rgba(0,0,0,.5);display:block;">
+      </a>
+      <div>
+        <p style="font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin-bottom:8px;">This piece exists because of one game</p>
+        <p style="font-size:clamp(1rem,1.8vw,1.15rem);font-weight:700;color:var(--cream);margin-bottom:10px;line-height:1.3;"><a href="https://store.steampowered.com/app/3966510/Feed_the_Scorchpot/" target="_blank" style="color:var(--cream);text-decoration:none;">Feed the Scorchpot ↗</a></p>
+        <p style="font-size:clamp(0.8rem,1.2vw,0.95rem);color:var(--mid);line-height:1.7;">A solo-developed game Indieformer is publishing — and the direct reason this guide exists. Every concept here — the eight disciplines, the content workload, the trough, the community, the odds — was drawn from watching a single developer navigate all of it in real time. <a href="https://www.indieformer.com/scorchpot" target="_blank" style="color:var(--green);text-decoration:underline;">Follow the journey ↗</a></p>
+      </div>
     </div>
 
     <div class="closing" style="margin-top:36px;">
